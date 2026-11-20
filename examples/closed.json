@@ -1,0 +1,8 @@
+{
+  "root": "reader",
+  "events": [
+    {"op":"pipe","process":"reader","pipe":"output","read_fd":3,"write_fd":4,"cloexec":false},
+    {"op":"close","process":"reader","fd":4},
+    {"op":"expect_eof","process":"reader","fd":3}
+  ]
+}

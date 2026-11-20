@@ -1,0 +1,5 @@
+events=10 checks=2 failed=1
+event=8 reader:3 pipe=output after_drain=HELD writers=1 self_held=0
+  holder=shell:4 created_event=1 via=pipe cloexec=false
+event=10 reader:3 pipe=output after_drain=PASS writers=0 self_held=0
+gate=FAIL (EOF expectations held)

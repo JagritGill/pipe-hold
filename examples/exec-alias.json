@@ -1,0 +1,12 @@
+{
+  "root": "worker",
+  "events": [
+    {"op":"pipe","process":"worker","pipe":"output","read_fd":3,"write_fd":4,"cloexec":true},
+    {"op":"dup2","process":"worker","src":3,"dst":0},
+    {"op":"dup2","process":"worker","src":4,"dst":1},
+    {"op":"exec","process":"worker"},
+    {"op":"expect_eof","process":"worker","fd":0},
+    {"op":"close","process":"worker","fd":1},
+    {"op":"expect_eof","process":"worker","fd":0}
+  ]
+}

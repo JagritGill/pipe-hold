@@ -1,0 +1,15 @@
+{
+  "root": "shell",
+  "events": [
+    {"op":"pipe","process":"shell","pipe":"output","read_fd":3,"write_fd":4,"cloexec":false},
+    {"op":"fork","process":"shell","child":"reader"},
+    {"op":"fork","process":"shell","child":"producer"},
+    {"op":"close","process":"reader","fd":4},
+    {"op":"close","process":"producer","fd":3},
+    {"op":"close","process":"shell","fd":3},
+    {"op":"exit","process":"producer"},
+    {"op":"expect_eof","process":"reader","fd":3},
+    {"op":"close","process":"shell","fd":4},
+    {"op":"expect_eof","process":"reader","fd":3}
+  ]
+}
